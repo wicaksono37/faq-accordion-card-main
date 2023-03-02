@@ -1,0 +1,203 @@
+/* global styling */
+:root {
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    /* Background gradient: */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /* Text */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* Dividers */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    font-family: "Kumb Sans", sans-serif;
+    padding: 2.4rem;
+    background: linear-gradient(180deg, var(--soft-violet) , var(--soft-blue));
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+/* global styling */
+
+/* styling main body */
+main {
+    border-radius: 2.2rem;
+    background-color: white;
+    max-width: 40rem;
+    display: grid;
+    margin-top: 11rem;
+}
+
+/* styling image container */
+.illustration {
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+/* styling 1st image */
+.illustration .image {
+    display: inherit;
+    position: relative;
+}
+
+/* styling background for 1st image */
+.illustration .image .bg {
+    display: inherit;
+}
+
+/* positioning 1st image */
+.illustration .image .woman {
+    display: inherit;
+    position: absolute;
+    width: 100%;
+    transform: translateY(-59%);
+}
+
+/* styling 2nd image */
+.illustration .box {
+    display: none;
+}
+
+/* styling faq section */
+.faq {
+    padding: 2.4rem;
+}
+
+/* styling faq h1 section */
+.faq h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 4rem;
+    color: var(--very-dark-desaturated-blue);
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+/* styling question section */
+.faq .question {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding-bottom: 1.7rem;
+    margin-bottom: 1.8rem;
+}
+
+.faq .question .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.faq .question .title input {
+    display: none;
+}
+
+.faq .question .title label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    letter-spacing: .005em;
+    color: var(--very-dark-grayish-blue);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* styling arrow image */
+.faq .question .title span {
+    display: inherit;
+    margin: 0 1.2rem;
+    transition: all 0.3s;
+}
+
+/* styling answer */
+.faq .question .title p {
+    padding-top: 1rem;
+    color: var(--dark-grayish-blue);
+    transition: all 0.3s;
+    display: none;
+}
+
+/* styling responsive question title */
+.faq .question .title label:hover {
+    color: var(--soft-red);
+}
+
+/* bold when get clicked */
+.faq .question .title input:checked ~ label {
+    font-weight: 700;
+}
+
+/* arrow transition */
+.faq .question .title input:checked ~ label span {
+    transform: rotate(-180deg);
+}
+
+/* answer section transition */
+.faq .question .title input:checked ~ p {
+    display: block;
+}
+
+/* responsive section */
+@media screen and (min-width: 940px) {
+    body {
+        padding: 4.8rem;
+    }
+    main {
+        grid-template-columns: 46rem auto;
+        margin-top: 0;
+        max-width: 92rem;
+    }
+    .illustration .image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .illustration .image .bg {
+        position: absolute;
+        transform: translate(-60%, -32%)
+    }
+    .illustration .image .woman {
+        position: static;
+        transform: translateX(-18%);
+    }
+    .illustration .box {
+        display: inherit;
+        transform: translate(-120%, 25%);
+        z-index: 1;
+    }
+    .faq {
+        padding: 6.4rem 9.8rem 6.7rem 1.6rem;
+    }
+    .faq h1 {
+        text-align: left;
+        margin-bottom: 3.6rem;
+    }
+    .faq .question {
+        margin-bottom: 1.6rem;
+    }
+    .faq .question .title label {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+}
